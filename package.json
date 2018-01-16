@@ -1,7 +1,7 @@
 {
   "name": "netease-music-sdk",
-  "version": "0.0.0",
-  "description": "NetEast Music API",
+  "version": "0.1.0",
+  "description": "NetEast Music SDK",
   "main": "./lib/index.js",
   "scripts": {
     "test": "jest",
@@ -11,6 +11,10 @@
     "lint": "tslint -p ."
   },
   "author": "XGHeaven",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:XGHeaven/netease-music-sdk.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/big-integer": "0.0.31",
