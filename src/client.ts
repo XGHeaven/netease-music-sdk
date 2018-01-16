@@ -1,3 +1,4 @@
+import { LoginNeededError } from './lib/error'
 import { createWebAPIRequest } from './lib/request'
 
 export class MusicClient {
@@ -9,7 +10,7 @@ export class MusicClient {
 
     public async checkLogin(): Promise<void> {
         if (!this.isLogin) {
-            throw new Error('need login')
+            throw new LoginNeededError()
         }
     }
 
