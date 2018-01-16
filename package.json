@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "NetEast Music SDK",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc",
