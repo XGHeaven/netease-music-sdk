@@ -9,8 +9,10 @@ const defaultPubKey = '010001'
 const nonce = '0CoJUm6Qyw8W8jud'
 const keys = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
-interface String {
-    hexEncode(): string
+declare global {
+    interface String {
+        hexEncode(): string
+    }
 }
 
 String.prototype.hexEncode = function() {
