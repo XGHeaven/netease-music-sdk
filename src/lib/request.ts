@@ -45,7 +45,7 @@ export async function createWebAPIRequest(
     path: string,
     method: string,
     data: any,
-    cookie: string,
+    cookie: string[] = [],
 ) {
     const cryptoreq = Encrypt(data)
     const options: Axios.AxiosRequestConfig = {

@@ -2,10 +2,10 @@ import { LoginNeededError } from './lib/error'
 import { createWebAPIRequest } from './lib/request'
 
 export class MusicClient {
-    public cookie = ''
+    public cookie: string[] = []
 
     public get isLogin(): boolean {
-        return !!this.cookie
+        return Array.isArray(this.cookie) && this.cookie.length > 1
     }
 
     public async checkLogin(): Promise<void> {
