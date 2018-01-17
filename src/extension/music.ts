@@ -2,13 +2,13 @@ import {MusicClient} from '../client'
 
 declare module '../client' {
     interface MusicClient {
-        musicUrl(id: number | string[] | string, br?: number): Promise<any>
-        likeMusic(id: number, like?: boolean): Promise<any>
+        getMusicUrl(id: number | string[] | string, br?: number): Promise<any>
+        doLikeMusic(id: number, like?: boolean): Promise<any>
         getSongInfo(id: number): Promise<any>
     }
 }
 
-MusicClient.prototype.musicUrl = async function(id: number | string[] | string, br: number = 999000) {
+MusicClient.prototype.getMusicUrl = async function(id: number | string[] | string, br: number = 999000) {
     if (typeof id === 'number') {
         id = id.toString()
     } else if (Array.isArray(id)) {
@@ -27,7 +27,7 @@ MusicClient.prototype.musicUrl = async function(id: number | string[] | string, 
     )
 }
 
-MusicClient.prototype.likeMusic = async function(id: number, like: boolean = true) {
+MusicClient.prototype.doLikeMusic = async function(id: number, like: boolean = true) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',

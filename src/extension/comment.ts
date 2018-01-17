@@ -15,7 +15,7 @@ declare module '../client' {
         getPlaylistComment(id: number, limit?: number, offset?: number): Promise<any>
         getMvComment(id: number, limit?: number, offset?: number): Promise<any>
         getDjComment(id: number, limit?: number, offset?: number): Promise<any>
-        likeComment(rid: number, cid: number, type?: ResourceType, like?: boolean): Promise<any>
+        doLikeComment(rid: number, cid: number, type?: ResourceType, like?: boolean): Promise<any>
     }
 }
 
@@ -89,7 +89,7 @@ MusicClient.prototype.getDjComment = async function(id: number, limit: number = 
     )
 }
 
-MusicClient.prototype.likeComment = async function(
+MusicClient.prototype.doLikeComment = async function(
     rid: number,
     cid: number,
     type: ResourceType = ResourceType.SONG,

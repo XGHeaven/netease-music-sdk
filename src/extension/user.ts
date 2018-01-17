@@ -7,18 +7,18 @@ export enum UserRecordType {
 
 declare module '../client' {
     interface MusicClient {
-        userDetail(uid: number): Promise<any>
-        userSubcount(): Promise<any>
-        userPlaylist(uid: number, limit?: number, offset?: number): Promise<any>
-        userDj(uid: number, limit?: number, offset?: number): Promise<any>
-        userFollows(uid: number, limit?: number, offset?: number): Promise<any>
-        userFolloweds(uid: number, limit?: number, offset?: number): Promise<any>
-        userEvent(uid: number): Promise<any>
-        userRecord(uid: number, type?: UserRecordType): Promise<any>
+        getUserDetail(uid: number): Promise<any>
+        getUserSubcount(): Promise<any>
+        getUserPlaylist(uid: number, limit?: number, offset?: number): Promise<any>
+        getUserDj(uid: number, limit?: number, offset?: number): Promise<any>
+        getUserFollows(uid: number, limit?: number, offset?: number): Promise<any>
+        getUserFolloweds(uid: number, limit?: number, offset?: number): Promise<any>
+        getUserEvent(uid: number): Promise<any>
+        getUserRecord(uid: number, type?: UserRecordType): Promise<any>
     }
 }
 
-MusicClient.prototype.userDetail = async function(uid: number) {
+MusicClient.prototype.getUserDetail = async function(uid: number) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -27,7 +27,7 @@ MusicClient.prototype.userDetail = async function(uid: number) {
     )
 }
 
-MusicClient.prototype.userSubcount = async function() {
+MusicClient.prototype.getUserSubcount = async function() {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -36,7 +36,7 @@ MusicClient.prototype.userSubcount = async function() {
     )
 }
 
-MusicClient.prototype.userPlaylist = async function(uid: number, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getUserPlaylist = async function(uid: number, limit: number = 30, offset: number = 0) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -51,7 +51,7 @@ MusicClient.prototype.userPlaylist = async function(uid: number, limit: number =
     )
 }
 
-MusicClient.prototype.userDj = async function(uid: number, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getUserDj = async function(uid: number, limit: number = 30, offset: number = 0) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -65,7 +65,7 @@ MusicClient.prototype.userDj = async function(uid: number, limit: number = 30, o
     )
 }
 
-MusicClient.prototype.userFollows = async function(uid: number, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getUserFollows = async function(uid: number, limit: number = 30, offset: number = 0) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -79,7 +79,7 @@ MusicClient.prototype.userFollows = async function(uid: number, limit: number = 
     )
 }
 
-MusicClient.prototype.userFolloweds = async function(uid: number, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getUserFolloweds = async function(uid: number, limit: number = 30, offset: number = 0) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -94,7 +94,7 @@ MusicClient.prototype.userFolloweds = async function(uid: number, limit: number 
     )
 }
 
-MusicClient.prototype.userEvent = async function(uid: number) {
+MusicClient.prototype.getUserEvent = async function(uid: number) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -108,7 +108,7 @@ MusicClient.prototype.userEvent = async function(uid: number) {
     )
 }
 
-MusicClient.prototype.userRecord = async function(uid: number, type: UserRecordType = UserRecordType.WEEK) {
+MusicClient.prototype.getUserRecord = async function(uid: number, type: UserRecordType = UserRecordType.WEEK) {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
