@@ -4,6 +4,7 @@ declare module '../client' {
     interface MusicClient {
         musicUrl(id: number | string[] | string, br?: number): Promise<any>
         likeMusic(id: number, like?: boolean): Promise<any>
+        getSongInfo(id: number): Promise<any>
     }
 }
 
@@ -36,6 +37,19 @@ MusicClient.prototype.likeMusic = async function(id: number, like: boolean = tru
             csrf_token: '',
             like,
             trackId: id,
+        },
+    )
+}
+
+MusicClient.prototype.getSongInfo = async function(id: number) {
+    return await this.request(
+        'music.163.com',
+        '/weapi/v3/song/detail',
+        'POST',
+        {
+            c: JSON.stringify([{ id }]),
+            csrf_token: '',
+            ids: '[' + id + ']',
         },
     )
 }
