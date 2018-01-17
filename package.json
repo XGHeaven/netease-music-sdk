@@ -9,7 +9,8 @@
     "build": "tsc",
     "clean": "rimraf lib",
     "prepublish": "npm run clean && npm run build",
-    "lint": "tslint -p ."
+    "lint": "tslint -p .",
+    "play": "ts-node --project test/tsconfig.json playground.ts"
   },
   "author": "XGHeaven",
   "repository": {
@@ -26,6 +27,7 @@
     "jest": "^22.0.6",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.0.1",
+    "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
     "typescript": "^2.6.2"
   },
