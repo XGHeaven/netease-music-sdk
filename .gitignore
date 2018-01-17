@@ -70,3 +70,6 @@ typings/
 
 # test
 /test/config.json
+
+# playground
+/playground.ts
