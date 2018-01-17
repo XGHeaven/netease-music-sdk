@@ -3,7 +3,11 @@ import { BaseRequestData } from '../lib/request'
 
 declare module '../client' {
     interface MusicClient {
-        personalFM(): Promise<any> // 个人 FM
+        getPersonalFM(limit?: number, offset?: number): Promise<any> // 个人 FM
+        getPersonalPlaylist(): Promise<any> // 个人推荐歌单
+        getPersonalNewSong(): Promise<any> // 个人推荐新歌
+        getPersonalDj(): Promise<any> // 个人推荐电台
+        getPersonalPrivateContent(): Promise<any> // 独家放送
     }
 }
 
@@ -17,7 +21,7 @@ export interface PersonalFMData extends BaseRequestData {
     data: PersonalFMData[]
 }
 
-MusicClient.prototype.personalFM = async function() {
+MusicClient.prototype.getPersonalFM = async function() {
     await this.checkLogin()
     return await this.request(
         'music.163.com',
@@ -26,5 +30,53 @@ MusicClient.prototype.personalFM = async function() {
         {
             csrf_token: '',
         },
+    )
+}
+
+MusicClient.prototype.getPersonalPlaylist = async function(limit: number = 30, offset: number = 0) {
+    await this.checkLogin()
+    return await this.request(
+        'music.163.com',
+        '/weapi/personalized/playlist',
+        'POST',
+        {
+            csrf_token: '',
+            limit,
+            n: 1000,
+            offset,
+            total: true,
+        },
+    )
+}
+
+MusicClient.prototype.getPersonalNewSong = async function() {
+    await this.checkLogin()
+    return await this.request(
+        'music.163.com',
+        '/weapi/personalized/newsong',
+        'POST',
+        {
+            type: 'recommend',
+        },
+    )
+}
+
+MusicClient.prototype.getPersonalDj = async function() {
+    await this.checkLogin()
+    return await this.request(
+        'music.163.com',
+        '/weapi/personalized/djprogram',
+        'POST',
+        {},
+    )
+}
+
+MusicClient.prototype.getPersonalPrivateContent = async function() {
+    await this.checkLogin()
+    return await this.request(
+        'music.163.com',
+        '/weapi/personalized/privatecontent',
+        'POST',
+        {},
     )
 }
