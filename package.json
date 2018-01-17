@@ -19,8 +19,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/big-integer": "0.0.31",
+    "@types/fs-extra": "^5.0.0",
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
+    "fs-extra": "^5.0.0",
     "jest": "^22.0.6",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.0.1",

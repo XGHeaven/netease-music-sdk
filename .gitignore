@@ -67,3 +67,6 @@ typings/
 
 /ret
 /lib
+
+# test
+/test/config.json

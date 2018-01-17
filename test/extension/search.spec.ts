@@ -1,4 +1,4 @@
-import {MusicClient, SearchType} from '../../src'
+import {MusicClient, SearchType} from '../'
 
 const music = new MusicClient()
 
