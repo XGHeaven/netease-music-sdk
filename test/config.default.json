@@ -1,0 +1,12 @@
+{
+  "account": {
+    "phone": {
+      "user": "your test phone number",
+      "pwd": "your test password"
+    },
+    "email": {
+      "user": "your test email address",
+      "pwd": "your test password"
+    }
+  }
+}

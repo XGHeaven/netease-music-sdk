@@ -67,3 +67,9 @@ typings/
 
 /ret
 /lib
+
+# test
+/test/config.json
+
+# playground
+/playground.ts
