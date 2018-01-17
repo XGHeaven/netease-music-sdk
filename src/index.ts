@@ -1,19 +1,19 @@
+export { MusicClient } from './client'
+
+export * from './lib/error'
+
 import './extension/album'
 import './extension/artist'
 import './extension/banner'
-import './extension/comment'
+export { ResourceType } from './extension/comment'
 import './extension/dj'
 import './extension/login'
 import './extension/lyric'
 import './extension/music'
 import './extension/personalized'
-import './extension/playlist'
+export { PlaylistOperation } from './extension/playlist'
 import './extension/recommend'
 export { SearchType } from './extension/search'
 import './extension/simi'
 import './extension/top'
 export { UserRecordType } from './extension/user'
-
-export * from './lib/error'
-
-export { MusicClient } from './client'
