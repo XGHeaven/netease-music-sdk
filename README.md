@@ -18,5 +18,47 @@ npm install netease-music-sdk
 
 使用很简单，直接引入然后开始使用，由于我采用 Typescript 开发，所以提示会很完全，可以放心开发。
 
+直接实例化对象之后调用对应方法即可。
+
+```typescript
+const {MusicClient} = require('netease-music-sdk')
+const client = new MusicClient()
+
+client.getPlaylistCatalogue().then(cate => {
+    // blah blah
+})
+
+// 或者可以登录之后操作与用户相关的内容，现在暂时只能用手机号登录
+// 邮箱登录需要等原作者修复，修复之后我会自动跟进
+
+client.phoneLogin('phone', 'pwd').then(() => {
+    // 当用户登录成功之后，会将 cookie 保存到 client.cookie
+    // 如果需要，请大家手动将 cookie dump 到本地
+    return client.getPersonalFM()
+}).then(fm => {
+    console.dir(fm)
+}).catch(e => {
+    // 登录失败啊，需要登录权限啊，等等错误
+})
+```
+
+## 进度
+
+- [x] 专辑
+- [x] 歌手
+- [ ] 轮播图
+- [x] 评论
+- [ ] 电台
+- [x] 登录
+- [ ] 歌词
+- [x] 音乐
+- [x] 个人推荐
+- [x] 歌单
+- [x] 推荐系统
+- [x] 搜索
+- [ ] 相似查找
+- [ ] 最热
+- [x] 用户
+
 ## Thanks
 
