@@ -1,7 +1,7 @@
 {
   "name": "netease-music-sdk",
   "version": "0.2.0",
-  "description": "NetEast Music SDK",
+  "description": "NetEast Music SDK, Simple & Quickly & Powerful",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
