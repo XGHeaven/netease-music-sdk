@@ -45,20 +45,18 @@ declare module '../client' {
         /**
          * 获取排行榜
          * @param {TopListType} type
-         * @param {number} limit
-         * @param {number} offset
          * @returns {Promise<any>}
          */
-        getTopList(type: TopListType, limit?: number, offset?: number): Promise<any>
+        getTopList(type: TopListType): Promise<any>
 
         /**
          * 新碟上架
-         * @param {TopResourceArea} type
+         * @param {TopResourceArea} area
          * @param {number} limit
          * @param {number} offset
          * @returns {Promise<any>}
          */
-        getTopAlbum(type: TopResourceArea, limit?: number, offset?: number): Promise<any>
+        getTopAlbum(area: TopResourceArea, limit?: number, offset?: number): Promise<any>
 
         /**
          * 热门歌手
@@ -85,20 +83,20 @@ declare module '../client' {
          * @param {number} offset
          * @returns {Promise<any>}
          */
-        getTopPlaylistHighquality(cat: string, limit?: number, offset?: number): Promise<any>
+        getTopPlaylistHighquality(cat: string, limit?: number): Promise<any>
 
         /**
-         * 获取新歌（缺失文档）
+         * 获取新歌（缺失文档），看原代码里面有，先不添加。
          * @param {TopResourceArea} area
          * @param {number} limit
          * @param {number} offset
          * @returns {Promise<any>}
          */
-        getTopSong(area: TopResourceArea, limit?: number, offset?: number): Promise<any>
+        // getTopSong(area: TopResourceArea, limit?: number, offset?: number): Promise<any>
     }
 }
 
-MusicClient.prototype.getTopList = async function(type: TopListType, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getTopList = async function(type: TopListType) {
     return await this.request(
         'music.163.com',
         '/weapi/v3/playlist/detail',
@@ -106,21 +104,19 @@ MusicClient.prototype.getTopList = async function(type: TopListType, limit: numb
         {
             csrf_token: '',
             id: type,
-            limit,
             n: 1000,
-            offset,
             total: true,
         },
     )
 }
 
-MusicClient.prototype.getTopAlbum = async function(type: TopResourceArea, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getTopAlbum = async function(area: TopResourceArea, limit: number = 30, offset: number = 0) {
     return await this.request(
         'music.163.com',
         '/weapi/album/new',
         'POST',
         {
-            area: type,
+            area,
             csrf_token: '',
             limit,
             offset,
@@ -163,7 +159,7 @@ MusicClient.prototype.getTopPlaylist = async function(
     )
 }
 
-MusicClient.prototype.getTopPlaylistHighquality = async function(cat: string, limit: number = 30, offset: number = 0) {
+MusicClient.prototype.getTopPlaylistHighquality = async function(cat: string, limit: number = 30) {
     return await this.request(
         'music.163.com',
         '/weapi/playlist/highquality/list',
@@ -172,22 +168,21 @@ MusicClient.prototype.getTopPlaylistHighquality = async function(cat: string, li
             cat,
             csrf_token: '',
             limit,
-            offset,
         },
     )
 }
 
-MusicClient.prototype.getTopSong = async function(area: TopResourceArea, limit: number = 30, offset: number = 0) {
-    return await this.request(
-        'music.163.com',
-        '/weapi/v1/discovery/new/songs',
-        'POST',
-        {
-            area,
-            csrf_token: '',
-            limit,
-            offset,
-            total: true,
-        },
-    )
-}
+// MusicClient.prototype.getTopSong = async function(area: TopResourceArea, limit: number = 30, offset: number = 0) {
+//     return await this.request(
+//         'music.163.com',
+//         '/weapi/v1/discovery/new/songs',
+//         'POST',
+//         {
+//             area,
+//             csrf_token: '',
+//             limit,
+//             offset,
+//             total: true,
+//         },
+//     )
+// }
