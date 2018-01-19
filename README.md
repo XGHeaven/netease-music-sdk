@@ -1,5 +1,8 @@
 # Netease-Music-SDK
 
+[![npm](https://img.shields.io/npm/v/netease-music-sdk.svg?style=flat-square)](https://github.com/XGHeaven/netease-music-sdk)
+[![npm](https://img.shields.io/npm/dw/netease-music-sdk.svg?style=flat-square)](https://www.npmjs.com/package/netease-music-sdk)
+
 网易云音乐 Node.js 版本 SDK，反正估计只有国内会用，我也就懒得用英文了。
 
 由于发现市面上很多类似的 API 都是提供的 API 服务，而不是说 SDK，或者是很多都年久失修，所以才诞生了这个项目。
@@ -55,7 +58,7 @@ client.phoneLogin('phone', 'pwd').then(() => {
 - [x] 个人推荐
 - [x] 歌单
 - [x] 推荐系统
-- [x] 搜索
+- [x] 搜索（已测）
 - [ ] 相似查找
 - [ ] 最热
 - [x] 用户
