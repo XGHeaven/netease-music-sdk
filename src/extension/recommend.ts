@@ -23,9 +23,9 @@ MusicClient.prototype.getRecommendSong = async function(limit: number = 30, offs
         '/weapi/v1/discovery/recommend/songs',
         'POST',
         {
-            csrf_token: '',
             limit,
             offset,
+            csrf_token: '',
             total: true,
         },
     )

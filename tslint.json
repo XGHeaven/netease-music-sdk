@@ -1,14 +1,9 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
+        "@xgheaven/tslint-config-xgheaven"
     ],
     "jsRules": {},
-    "rules": {
-        "semicolon": [true, "never"],
-        "quotemark": [true, "single"],
-        "interface-name": false,
-        "only-arrow-functions": false
-    },
+    "rules": {},
     "rulesDirectory": []
 }

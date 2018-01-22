@@ -40,10 +40,10 @@ MusicClient.prototype.getPersonalPlaylist = async function(limit: number = 30, o
         '/weapi/personalized/playlist',
         'POST',
         {
-            csrf_token: '',
             limit,
-            n: 1000,
             offset,
+            csrf_token: '',
+            n: 1000,
             total: true,
         },
     )

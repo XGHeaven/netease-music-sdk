@@ -23,10 +23,10 @@ MusicClient.prototype.getArtistMvs = async function(id: number, limit: number = 
         `/weapi/artist/mvs`,
         'POST',
         {
-            artistId: id,
-            csrf_token: '',
             limit,
             offset,
+            artistId: id,
+            csrf_token: '',
             total: true,
         },
     )
@@ -38,9 +38,9 @@ MusicClient.prototype.getArtistAlbums = async function(id: number, limit: number
         `/weapi/artist/albums/${id}`,
         'POST',
         {
-            csrf_token: '',
             limit,
             offset,
+            csrf_token: '',
             total: true,
         },
     )
@@ -52,8 +52,8 @@ MusicClient.prototype.getArtistInfo = async function(id: number) {
         `/weapi/artist/introduction`,
         'POST',
         {
-            csrf_token: '',
             id,
+            csrf_token: '',
         },
     )
 }

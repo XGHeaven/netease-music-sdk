@@ -30,11 +30,11 @@ MusicClient.prototype.search = async function(
         '/weapi/search/get',
         'POST',
         {
-            csrf_token: '',
             limit,
             offset,
-            s: keyword,
             type,
+            csrf_token: '',
+            s: keyword,
         },
     )
 }
@@ -58,9 +58,9 @@ MusicClient.prototype.multiSearch = async function(keyword: string, type: Search
         '/weapi/search/suggest/multimatch',
         'POST',
         {
+            type,
             csrf_token: '',
             s: keyword,
-            type,
         },
     )
 }

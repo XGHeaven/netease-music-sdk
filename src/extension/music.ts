@@ -1,4 +1,4 @@
-import {MusicClient} from '../client'
+import { MusicClient } from '../client'
 
 declare module '../client' {
     interface MusicClient {
@@ -34,8 +34,8 @@ MusicClient.prototype.doLikeMusic = async function(id: number, like: boolean = t
         `/weapi/radio/like?alg=${'itembased'}&trackId=${id}&like=${like}&time=${25}`,
         'POST',
         {
-            csrf_token: '',
             like,
+            csrf_token: '',
             trackId: id,
         },
     )

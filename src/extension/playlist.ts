@@ -20,8 +20,8 @@ MusicClient.prototype.getPlaylistInfo = async function(id: number) {
         '/weapi/v3/playlist/detail',
         'POST',
         {
-            csrf_token: '',
             id,
+            csrf_token: '',
             n: 100000,
         },
     )
@@ -38,9 +38,9 @@ MusicClient.prototype.doPlaylistTrack = async function(
         '/weapi/playlist/manipulate/tracks',
         'POST',
         {
-            csrf_token: '',
             op,
             pid,
+            csrf_token: '',
             trackIds: JSON.stringify([mid]),
             tracks: mid,
         },
