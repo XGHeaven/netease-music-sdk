@@ -1,6 +1,6 @@
-import { MusicClient } from '../src'
 import * as fs from 'fs-extra'
 import * as path from 'path'
+import { MusicClient } from '../src'
 
 let config: any
 const configPath = path.join(__dirname, 'config.json')
@@ -27,8 +27,6 @@ export async function getLoginedClient(): Promise<MusicClient> {
 
     return client
 }
-
-export * from '../src'
 
 process.on('beforeExit', () => {
     if (config) {

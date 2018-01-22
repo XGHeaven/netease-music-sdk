@@ -1,5 +1,5 @@
-import { getClient, MusicClient } from '../'
-import {TopListType, TopPlaylistOrder, TopResourceArea} from '../../src'
+import { getClient } from '../'
+import { MusicClient, TopListType, TopPlaylistOrder, TopResourceArea } from '../../src'
 
 let client: MusicClient
 
