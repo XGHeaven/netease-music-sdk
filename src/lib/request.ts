@@ -49,6 +49,7 @@ export async function createWebAPIRequest(
 ) {
     const cryptoreq = Encrypt(data)
     const options: Axios.AxiosRequestConfig = {
+        method,
         data: querystring.stringify({
             encSecKey: cryptoreq.encSecKey,
             params: cryptoreq.params,
@@ -63,7 +64,6 @@ export async function createWebAPIRequest(
             'Referer': 'http://music.163.com',
             'User-Agent': randomUserAgent(),
         },
-        method,
         url: `http://${host}${path}`,
     }
 
@@ -83,13 +83,13 @@ export async function createWebAPIRequest(
 
 export async function createRequest(path: string, method: string, data: any): Promise<any> {
     const options: Axios.AxiosRequestConfig = {
+        method,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Cookie': 'appver=1.5.2',
             'Referer': 'http://music.163.com',
             'User-Agent': randomUserAgent(),
         },
-        method,
         url: `http://music.163.com${path}`,
     }
 

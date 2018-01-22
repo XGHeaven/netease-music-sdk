@@ -1,6 +1,6 @@
-import {createHash} from 'crypto'
+import { createHash } from 'crypto'
 import { MusicClient } from '../client'
-import {createWebAPIRequest, BaseRequestData} from '../lib/request'
+import { BaseRequestData, createWebAPIRequest } from '../lib/request'
 
 declare module '../client' {
     interface MusicClient {
@@ -40,8 +40,8 @@ MusicClient.prototype.phoneLogin = async function(phone: string, password: strin
         '/weapi/login/cellphone',
         'POST',
         {
-            password: md5sum.digest('hex'),
             phone,
+            password: md5sum.digest('hex'),
             rememberLogin: 'true',
         },
     )

@@ -117,9 +117,9 @@ MusicClient.prototype.getTopAlbum = async function(area: TopResourceArea, limit:
         'POST',
         {
             area,
-            csrf_token: '',
             limit,
             offset,
+            csrf_token: '',
             total: true,
         },
     )
@@ -131,9 +131,9 @@ MusicClient.prototype.getTopArtist = async function(limit: number = 30, offset: 
         `/weapi/artist/top`,
         'POST',
         {
-            csrf_token: '',
             limit,
             offset,
+            csrf_token: '',
             total: true,
         },
     )
@@ -166,8 +166,8 @@ MusicClient.prototype.getTopPlaylistHighquality = async function(cat: string, li
         'POST',
         {
             cat,
-            csrf_token: '',
             limit,
+            csrf_token: '',
         },
     )
 }

@@ -43,10 +43,10 @@ MusicClient.prototype.getUserPlaylist = async function(uid: number, limit: numbe
         '/weapi/user/playlist',
         'POST',
         {
-            csrf_token: '',
             limit, // 貌似无效
             offset,
             uid,
+            csrf_token: '',
         },
     )
 }
@@ -58,9 +58,9 @@ MusicClient.prototype.getUserDj = async function(uid: number, limit: number = 30
         `/weapi/dj/program/${uid}`,
         'POST',
         {
-            csrf_token: '',
             limit,
             offset,
+            csrf_token: '',
         },
     )
 }
@@ -86,9 +86,9 @@ MusicClient.prototype.getUserFolloweds = async function(uid: number, limit: numb
         `/weapi/user/getfolloweds/`,
         'POST',
         {
-            csrf_token: '',
             limit,
             offset,
+            csrf_token: '',
             userId: uid,
         },
     )
@@ -115,9 +115,9 @@ MusicClient.prototype.getUserRecord = async function(uid: number, type: UserReco
         `/weapi/v1/play/record`,
         'POST',
         {
-            csrf_token: '',
             type,
             uid, // 用户 id
+            csrf_token: '',
         },
     )
 }

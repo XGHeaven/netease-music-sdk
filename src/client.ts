@@ -2,25 +2,25 @@ import { LoginNeededError } from './lib/error'
 import { createWebAPIRequest } from './lib/request'
 
 export class MusicClient {
-    public cookie: string[] = []
+    cookie: string[] = []
 
-    public get isLogin(): boolean {
+    get isLogin(): boolean {
         return Array.isArray(this.cookie) && this.cookie.length > 1
     }
 
-    public async checkLogin(): Promise<void> {
+    async checkLogin(): Promise<void> {
         if (!this.isLogin) {
             throw new LoginNeededError()
         }
     }
 
-    public async request(host: string, path: string, method: string, payload: any = {
+    async request(host: string, path: string, method: string, payload: any = {
         csrf_token: '',
     }) {
         return (await createWebAPIRequest(host, path, method, payload, this.cookie)).data
     }
 
-    public async requestWithSetCookie(host: string, path: string, method: string, payload: any = {
+    async requestWithSetCookie(host: string, path: string, method: string, payload: any = {
         csrf_token: '',
     }) {
         const {data, cookie} = await createWebAPIRequest(host, path, method, payload, this.cookie)
