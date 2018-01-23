@@ -3,11 +3,41 @@ import { BaseRequestData } from '../lib/request'
 
 declare module '../client' {
     interface MusicClient {
-        getPersonalFM(limit?: number, offset?: number): Promise<any> // 个人 FM
-        getPersonalPlaylist(): Promise<any> // 个人推荐歌单
-        getPersonalNewSong(): Promise<any> // 个人推荐新歌
-        getPersonalDj(): Promise<any> // 个人推荐电台
-        getPersonalPrivateContent(): Promise<any> // 独家放送
+        /**
+         * 获取个人电台
+         * @returns {Promise<any>}
+         */
+        getPersonalFM(): Promise<any>
+
+        /**
+         * 获取个人推荐歌单
+         * @question 找不到应用
+         * @param {number} limit
+         * @param {number} offset
+         * @returns {Promise<any>}
+         */
+        getPersonalPlaylist(limit?: number, offset?: number): Promise<any>
+
+        /**
+         * 获取个人推荐新歌
+         * @question 找不到应用
+         * @returns {Promise<any>}
+         */
+        getPersonalNewSong(): Promise<any>
+
+        /**
+         * 获取个人推荐电台
+         * @question 找不到应用
+         * @returns {Promise<any>}
+         */
+        getPersonalDj(): Promise<any>
+
+        /**
+         * 获取独家放送
+         * @question 找不到应用
+         * @returns {Promise<any>}
+         */
+        getPersonalPrivateContent(): Promise<any>
     }
 }
 
