@@ -7,9 +7,9 @@ import {getClient, getLoginedClient} from './test'
 // 你可以选择登录之后的或者未登录的
 // 请将登录信息写入到 test/config.json，与测试代码公用
 
-// getLoginedClient().then(client => {
+getLoginedClient().then(client => {
     // 登录之后的客户端
-// })
+})
 
 // getClient().then(client => {
     // 未登录的客户端
