@@ -5,6 +5,7 @@ declare module '../client' {
         getMusicUrl(id: number | string[] | string, br?: number): Promise<any>
         doLikeMusic(id: number, like?: boolean): Promise<any>
         getSongInfo(id: number): Promise<any>
+        getSongLyric(sid: number): Promise<any>
     }
 }
 
@@ -51,5 +52,13 @@ MusicClient.prototype.getSongInfo = async function(id: number) {
             csrf_token: '',
             ids: '[' + id + ']',
         },
+    )
+}
+
+MusicClient.prototype.getSongLyric = async function(sid: number) {
+    return await this.request(
+        'music.163.com',
+        '/weapi/song/lyric?os=osx&id=' + sid + '&lv=-1&kv=-1&tv=-1',
+        'POST',
     )
 }
