@@ -1,7 +1,7 @@
 import { LoginNeededError } from './lib/error'
 import { createWebAPIRequest } from './lib/request'
 
-export class MusicClient {
+export class BaseClient {
     cookie: string[] = []
 
     get isLogin(): boolean {

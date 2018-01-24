@@ -1,6 +1,6 @@
 // tslint:disable no-console
 
-import {getClient, getLoginedClient} from './test'
+import { getClient, getLoginedClient } from './test'
 
 // 测试代码，这里定向测试你的借口，并且不会提交到 Git 当中
 // 通过 `npm run play` 运行 playground
