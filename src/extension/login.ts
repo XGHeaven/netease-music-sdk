@@ -7,6 +7,13 @@ export interface LoginData extends BaseRequestData {
 }
 
 export class LoginExtClient extends BaseClient {
+    /**
+     * 邮件登录，通过文件我们得知暂时是无法使用的，我本人也测试过了
+     * @deprecated
+     * @param {string} email
+     * @param {string} password
+     * @returns {Promise<any>}
+     */
     async emailLogin(email: string, password: string) {
         const md5sum = createHash('md5')
         md5sum.update(password)
@@ -24,6 +31,12 @@ export class LoginExtClient extends BaseClient {
         )
     }
 
+    /**
+     * 手机登录，可以使用
+     * @param {string} phone
+     * @param {string} password
+     * @returns {Promise<any>}
+     */
     async phoneLogin(phone: string, password: string) {
         const md5sum = createHash('md5')
         md5sum.update(password)
@@ -40,6 +53,10 @@ export class LoginExtClient extends BaseClient {
         )
     }
 
+    /**
+     * 刷新登录，刷新内部存储的 cookie 信息
+     * @returns {Promise<any>}
+     */
     async refreshLogin() {
         return await this.requestWithSetCookie(
             'music.163.com',
