@@ -11,7 +11,8 @@
     "prepublish": "npm run clean && npm run build",
     "lint": "tslint -p .",
     "lint:fix": "tslint -p . --fix",
-    "play": "ts-node --project test/tsconfig.json playground.ts"
+    "play": "ts-node --project test/tsconfig.json playground.ts",
+    "doc:gen": "typedoc src/index.ts"
   },
   "author": "XGHeaven",
   "repository": {
@@ -31,6 +32,8 @@
     "ts-jest": "^22.0.1",
     "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
+    "typedoc": "^0.9.0",
+    "typedoc-plugin-internal-external": "^1.0.10",
     "typescript": "^2.6.2"
   },
   "dependencies": {
