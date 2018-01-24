@@ -1,5 +1,8 @@
-import { MusicClient } from '../client'
+import { BaseClient } from '../client'
 
+/**
+ * @internal
+ */
 export enum TopListType {
     '新歌榜' = '3779629',
     '热歌榜' = '3778678',
@@ -27,6 +30,9 @@ export enum TopListType {
     '云音乐嘻哈榜' = '991319590',
 }
 
+/**
+ * @internal
+ */
 export enum TopResourceArea {
     ALL = 'ALL',
     ZH = 'ZH',
@@ -35,154 +41,121 @@ export enum TopResourceArea {
     JP = 'JP',
 }
 
+/**
+ * @internal
+ */
 export enum TopPlaylistOrder {
     NEW = 'new',
     HOT = 'hot',
 }
 
-declare module '../client' {
-    interface MusicClient {
-        /**
-         * 获取排行榜
-         * @param {TopListType} type
-         * @returns {Promise<any>}
-         */
-        getTopList(type: TopListType): Promise<any>
+export class TopExtClient extends BaseClient {
+    /**
+     * 获取排行榜
+     * @param {TopListType} type
+     * @returns {Promise<any>}
+     */
+    async getTopList(type: TopListType) {
+        return await this.request(
+            'music.163.com',
+            '/weapi/v3/playlist/detail',
+            'POST',
+            {
+                csrf_token: '',
+                id: type,
+                n: 1000,
+                total: true,
+            },
+        )
+    }
 
-        /**
-         * 新碟上架
-         * @param {TopResourceArea} area
-         * @param {number} limit
-         * @param {number} offset
-         * @returns {Promise<any>}
-         */
-        getTopAlbum(area: TopResourceArea, limit?: number, offset?: number): Promise<any>
+    /**
+     * 新碟上架
+     * @param {TopResourceArea} area
+     * @param {number} limit
+     * @param {number} offset
+     * @returns {Promise<any>}
+     */
+    async getTopAlbum(area: TopResourceArea, limit: number = 30, offset: number = 0) {
+        return await this.request(
+            'music.163.com',
+            '/weapi/album/new',
+            'POST',
+            {
+                area,
+                limit,
+                offset,
+                csrf_token: '',
+                total: true,
+            },
+        )
+    }
 
-        /**
-         * 热门歌手
-         * @param {number} limit
-         * @param {number} offset
-         * @returns {Promise<any>}
-         */
-        getTopArtist(limit?: number, offset?: number): Promise<any>
+    /**
+     * 热门歌手
+     * @param {number} limit
+     * @param {number} offset
+     * @returns {Promise<any>}
+     */
+    async getTopArtist(limit: number = 30, offset: number = 0) {
+        return await this.request(
+            'music.163.com',
+            `/weapi/artist/top`,
+            'POST',
+            {
+                limit,
+                offset,
+                csrf_token: '',
+                total: true,
+            },
+        )
+    }
 
-        /**
-         * 获取歌单 ( 网友精选碟 )
-         * @param {string} cat
-         * @param {TopPlaylistOrder} order
-         * @param {number} limit
-         * @param {number} offset
-         * @returns {Promise<any>}
-         */
-        getTopPlaylist(cat: string, order: TopPlaylistOrder, limit?: number, offset?: number): Promise<any>
+    /**
+     * 获取歌单 ( 网友精选碟 )
+     * @param {string} cat
+     * @param {TopPlaylistOrder} order
+     * @param {number} limit
+     * @param {number} offset
+     * @returns {Promise<any>}
+     */
+    async getTopPlaylist(
+        cat: string, // TODO: 找一些一共有哪些类型，现在暂时还是通过手动输入好了，比如 '全部'。其实文档里只写了这个，我也不知道有哪些
+        order: TopPlaylistOrder,
+        limit: number = 30,
+        offset: number = 0,
+    ) {
+        return await this.request(
+            'music.163.com',
+            '/weapi/playlist/list',
+            'POST',
+            {
+                cat,
+                limit,
+                offset,
+                order,
+                total: 'true',
+            },
+        )
+    }
 
-        /**
-         * 获取精品歌单
-         * @param {string} cat
-         * @param {number} limit
-         * @param {number} offset
-         * @returns {Promise<any>}
-         */
-        getTopPlaylistHighquality(cat: string, limit?: number): Promise<any>
-
-        /**
-         * 获取新歌（缺失文档），看原代码里面有，先不添加。
-         * @param {TopResourceArea} area
-         * @param {number} limit
-         * @param {number} offset
-         * @returns {Promise<any>}
-         */
-        // getTopSong(area: TopResourceArea, limit?: number, offset?: number): Promise<any>
+    /**
+     * 获取精品歌单
+     * @param {string} cat
+     * @param {number} limit
+     * @param {number} offset
+     * @returns {Promise<any>}
+     */
+    async getTopPlaylistHighquality(cat: string, limit: number = 30) {
+        return await this.request(
+            'music.163.com',
+            '/weapi/playlist/highquality/list',
+            'POST',
+            {
+                cat,
+                limit,
+                csrf_token: '',
+            },
+        )
     }
 }
-
-MusicClient.prototype.getTopList = async function(type: TopListType) {
-    return await this.request(
-        'music.163.com',
-        '/weapi/v3/playlist/detail',
-        'POST',
-        {
-            csrf_token: '',
-            id: type,
-            n: 1000,
-            total: true,
-        },
-    )
-}
-
-MusicClient.prototype.getTopAlbum = async function(area: TopResourceArea, limit: number = 30, offset: number = 0) {
-    return await this.request(
-        'music.163.com',
-        '/weapi/album/new',
-        'POST',
-        {
-            area,
-            limit,
-            offset,
-            csrf_token: '',
-            total: true,
-        },
-    )
-}
-
-MusicClient.prototype.getTopArtist = async function(limit: number = 30, offset: number = 0) {
-    return await this.request(
-        'music.163.com',
-        `/weapi/artist/top`,
-        'POST',
-        {
-            limit,
-            offset,
-            csrf_token: '',
-            total: true,
-        },
-    )
-}
-
-MusicClient.prototype.getTopPlaylist = async function(
-    cat: string, // TODO: 找一些一共有哪些类型，现在暂时还是通过手动输入好了，比如 '全部'。其实文档里只写了这个，我也不知道有哪些
-    order: TopPlaylistOrder,
-    limit: number = 30,
-    offset: number = 0,
-) {
-    return await this.request(
-        'music.163.com',
-        '/weapi/playlist/list',
-        'POST',
-        {
-            cat,
-            limit,
-            offset,
-            order,
-            total: 'true',
-        },
-    )
-}
-
-MusicClient.prototype.getTopPlaylistHighquality = async function(cat: string, limit: number = 30) {
-    return await this.request(
-        'music.163.com',
-        '/weapi/playlist/highquality/list',
-        'POST',
-        {
-            cat,
-            limit,
-            csrf_token: '',
-        },
-    )
-}
-
-// MusicClient.prototype.getTopSong = async function(area: TopResourceArea, limit: number = 30, offset: number = 0) {
-//     return await this.request(
-//         'music.163.com',
-//         '/weapi/v1/discovery/new/songs',
-//         'POST',
-//         {
-//             area,
-//             csrf_token: '',
-//             limit,
-//             offset,
-//             total: true,
-//         },
-//     )
-// }

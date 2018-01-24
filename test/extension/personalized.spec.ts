@@ -1,4 +1,4 @@
-import { getLoginedClient} from '../'
+import { getLoginedClient } from '../'
 import { MusicClient } from '../../src'
 
 let client: MusicClient
