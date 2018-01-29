@@ -34,11 +34,10 @@
 npm install netease-music-sdk
 ```
 
-## 使用
+## Quick Start
 
-使用很简单，直接引入然后开始使用，由于我采用 Typescript 开发，所以提示会很完全，可以放心开发。
-
-直接实例化对象之后调用对应方法即可。
+使用很简单，直接引入 `MusicClient` 然后实例化之后就可以使用了。
+采用 Typescript 开发，并且 Document In Code，更多介绍，请查看 [SDK 文档](#API) 以及 `.d.ts`。
 
 > 有一些请求接口需要登录之后才能访问，所以请在调用登录之后访问这些接口，否则会报错。
 
@@ -76,7 +75,8 @@ client.phoneLogin('phone', 'pwd').then(() => {
 
 ## API
 
-开发中，请查看 `Typescript Declaration File(.d.ts)` 文件
+SDK 接口文档： [http://netease-music-sdk.xgheaven.com](http://netease-music-sdk.xgheaven.com)
 
 ## Thanks
 
+欢迎提交 issue 已经 PR
