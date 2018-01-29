@@ -979,6 +979,9 @@ img { max-width: 100%; }
 			<a href="classes/topextclient.html" class="tsd-kind-icon">Top<wbr>Ext<wbr>Client</a>
 		</li>
 		<li class=" tsd-kind-class tsd-is-external">
+			<a href="classes/user.html" class="tsd-kind-icon">User</a>
+		</li>
+		<li class=" tsd-kind-class tsd-is-external">
 			<a href="classes/userextclient.html" class="tsd-kind-icon">User<wbr>Ext<wbr>Client</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-is-external">
@@ -1021,7 +1024,7 @@ img { max-width: 100%; }
 			<h2 id="-">进度</h2>
 			<ul>
 				<li>[x] 专辑（已单测）</li>
-				<li>[x] 歌手</li>
+				<li>[x] 歌手（已单测）</li>
 				<li>[x] 轮播图（已单测）</li>
 				<li>[x] 评论</li>
 				<li>[x] 电台（已单测）</li>
@@ -1038,9 +1041,9 @@ img { max-width: 100%; }
 			<h2 id="-">安装</h2>
 			<pre><code class="lang-bash">npm install netease-music-sdk
 </code></pre>
-			<h2 id="-">使用</h2>
-			<p>使用很简单，直接引入然后开始使用，由于我采用 Typescript 开发，所以提示会很完全，可以放心开发。</p>
-			<p>直接实例化对象之后调用对应方法即可。</p>
+			<h2 id="quick-start">Quick Start</h2>
+			<p>使用很简单，直接引入 <code>MusicClient</code> 然后实例化之后就可以使用了。
+			采用 Typescript 开发，并且 Document In Code，更多介绍，请查看 <a href="#API">SDK 文档</a> 以及 <code>.d.ts</code>。</p>
 			<blockquote>
 				<p>有一些请求接口需要登录之后才能访问，所以请在调用登录之后访问这些接口，否则会报错。</p>
 			</blockquote>
@@ -1064,9 +1067,18 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
     <span class="hljs-comment">// 登录失败啊，需要登录权限啊，等等错误</span>
 })
 </code></pre>
+			<h3 id="-">登录与恢复</h3>
+			<p>因为对于网易云来说，用户的登录与管理是至关重要的一件事情，通过 <code>client.phoneLogin</code> 或者 <code>client.emailLogin</code> 登录。
+			之后可以通过 <code>client.user</code> 来获取一些用户信息，比如 <code>id</code>，昵称等。更多请查看 docs。</p>
+			<blockquote>
+				<p><code>client.user</code> 只有在登录之后才有效，否则会是 undefined</p>
+			</blockquote>
+			<p>当你再次声明一个新的对象的时候，可能需要恢复登录信息，那么可以通过将 <code>const store = oldClient.user.toJSON()</code> 导出登录信息。
+			在新的对象上调用 <code>newClient.load(store)</code> 恢复登录信息。调用 <code>load</code> 之后也会让 <code>client.user</code> 可用。</p>
 			<h2 id="api">API</h2>
-			<p>开发中，请查看 <code>Typescript Declaration File(.d.ts)</code> 文件</p>
+			<p>SDK 接口文档： <a href="http://netease-music-sdk.xgheaven.com">http://netease-music-sdk.xgheaven.com</a></p>
 			<h2 id="thanks">Thanks</h2>
+			<p>欢迎提交 issue 已经 PR</p>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -1103,6 +1115,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/searchextclient.html" class="tsd-kind-icon">Search<wbr>Ext<wbr>Client</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/simiextclient.html" class="tsd-kind-icon">Simi<wbr>Ext<wbr>Client</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/topextclient.html" class="tsd-kind-icon">Top<wbr>Ext<wbr>Client</a></li>
+							<li class="tsd-kind-class tsd-is-external"><a href="classes/user.html" class="tsd-kind-icon">User</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/userextclient.html" class="tsd-kind-icon">User<wbr>Ext<wbr>Client</a></li>
 						</ul>
 					</section>
@@ -1139,7 +1152,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/de6f2ae/src/lib/crypto.ts#L65">lib/crypto.ts:65</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/3e79de4/src/lib/crypto.ts#L65">lib/crypto.ts:65</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1164,7 +1177,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/de6f2ae/src/lib/request.ts#L84">lib/request.ts:84</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/3e79de4/src/lib/request.ts#L84">lib/request.ts:84</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1193,7 +1206,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/de6f2ae/src/lib/request.ts#L43">lib/request.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/3e79de4/src/lib/request.ts#L43">lib/request.ts:43</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
