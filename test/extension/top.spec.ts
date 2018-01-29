@@ -20,12 +20,13 @@ describe('新碟上架', () => {
 
         const areas = (await Promise.all([
             client.getTopAlbum(TopResourceArea.ALL),
-            client.getTopAlbum(TopResourceArea.ALL),
             client.getTopAlbum(TopResourceArea.EA),
             client.getTopAlbum(TopResourceArea.KR),
             client.getTopAlbum(TopResourceArea.JP),
             client.getTopAlbum(TopResourceArea.ZH),
         ])).map((item: any) => item.albums.map((album: any) => album.name))
+
+        areas.unshift((await client.getTopAlbum(TopResourceArea.ALL)).albums.map((album: any) => album.name))
 
         // 验证一下是否请求相同数据相同
         expect(areas[0]).toEqual(areas[1])

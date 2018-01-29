@@ -14,7 +14,7 @@
 ## 进度
 
 - [x] 专辑（已单测）
-- [x] 歌手
+- [x] 歌手（已单测）
 - [x] 轮播图（已单测）
 - [x] 评论
 - [x] 电台（已单测）
@@ -34,11 +34,10 @@
 npm install netease-music-sdk
 ```
 
-## 使用
+## Quick Start
 
-使用很简单，直接引入然后开始使用，由于我采用 Typescript 开发，所以提示会很完全，可以放心开发。
-
-直接实例化对象之后调用对应方法即可。
+使用很简单，直接引入 `MusicClient` 然后实例化之后就可以使用了。
+采用 Typescript 开发，并且 Document In Code，更多介绍，请查看 [SDK 文档](#API) 以及 `.d.ts`。
 
 > 有一些请求接口需要登录之后才能访问，所以请在调用登录之后访问这些接口，否则会报错。
 
@@ -64,9 +63,24 @@ client.phoneLogin('phone', 'pwd').then(() => {
 })
 ```
 
+### 登录与恢复
+
+因为对于网易云来说，用户的登录与管理是至关重要的一件事情，通过 `client.phoneLogin` 或者 `client.emailLogin` 登录。
+之后可以通过 `client.user` 来获取一些用户信息，比如 `id`，昵称等。更多请查看 docs。
+
+> `client.user` 只有在登录之后才有效，否则会是 undefined
+
+当你再次声明一个新的对象的时候，可能需要恢复登录信息，那么可以通过将 `const store = oldClient.user.toJSON()` 导出登录信息。
+在新的对象上调用 `newClient.load(store)` 恢复登录信息。调用 `load` 之后也会让 `client.user` 可用。
+
 ## API
 
-开发中，请查看 `Typescript Declaration File(.d.ts)` 文件
+SDK 接口文档： [http://netease-music-sdk.xgheaven.com](http://netease-music-sdk.xgheaven.com)
+
+## ChangeLog
+
+[ChangeLog](CHANGELOGS.md)
 
 ## Thanks
 
+欢迎提交 issue 已经 PR

@@ -1,11 +1,11 @@
 {
   "name": "netease-music-sdk",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "NetEast Music SDK, Simple & Quickly & Powerful",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest -i",
     "build": "tsc",
     "clean": "rimraf lib",
     "prepublish": "npm run clean && npm run build",
@@ -54,6 +54,10 @@
       "json",
       "node"
     ],
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{ts,js}"],
+    "coverageDirectory": "coverage",
+    "mapCoverage": true
   }
 }
