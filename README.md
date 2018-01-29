@@ -64,6 +64,16 @@ client.phoneLogin('phone', 'pwd').then(() => {
 })
 ```
 
+### 登录与恢复
+
+因为对于网易云来说，用户的登录与管理是至关重要的一件事情，通过 `client.phoneLogin` 或者 `client.emailLogin` 登录。
+之后可以通过 `client.user` 来获取一些用户信息，比如 `id`，昵称等。更多请查看 docs。
+
+> `client.user` 只有在登录之后才有效，否则会是 undefined
+
+当你再次声明一个新的对象的时候，可能需要恢复登录信息，那么可以通过将 `const store = oldClient.user.toJSON()` 导出登录信息。
+在新的对象上调用 `newClient.load(store)` 恢复登录信息。调用 `load` 之后也会让 `client.user` 可用。
+
 ## API
 
 开发中，请查看 `Typescript Declaration File(.d.ts)` 文件

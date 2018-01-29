@@ -4,7 +4,8 @@ import { User } from './user'
 
 export class BaseClient {
     /**
-     * 用户信息
+     * 用户信息，当手动调用登录或者 load 之后，此对象会自动实例化
+     * 通过调用 `user.toJSON()` 获取可以用于存储的对象，当下次实例化的时候，通过 `client.load` 恢复登录状态
      */
     user: User
 
