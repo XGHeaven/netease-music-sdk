@@ -77,6 +77,10 @@ client.phoneLogin('phone', 'pwd').then(() => {
 
 SDK 接口文档： [http://netease-music-sdk.xgheaven.com](http://netease-music-sdk.xgheaven.com)
 
+## ChangeLog
+
+[ChangeLog](CHANGELOGS.md)
+
 ## Thanks
 
 欢迎提交 issue 已经 PR
