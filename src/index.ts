@@ -91,6 +91,7 @@ import {
 export {
     UserRecordType,
 }
+import { MvExtClient } from './extension/mv'
 
 // https://www.typescriptlang.org/docs/handbook/declaration-merging.html
 function applyMixins(derivedCtor: any, baseCtors: any[]) {
@@ -115,7 +116,8 @@ export interface MusicClient extends
     SearchExtClient,
     SimiExtClient,
     TopExtClient,
-    UserExtClient {
+    UserExtClient,
+    MvExtClient {
     // EMPTY
 }
 
@@ -136,4 +138,5 @@ applyMixins(MusicClient, [
     SimiExtClient,
     TopExtClient,
     UserExtClient,
+    MvExtClient,
 ])
