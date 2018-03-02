@@ -12,7 +12,7 @@
     "lint": "tslint -p .",
     "lint:fix": "tslint -p . --fix",
     "play": "ts-node --project test/tsconfig.json playground.ts",
-    "doc:gen": "typedoc src/index.ts"
+    "doc:gen": "typedoc src/index.ts && echo 'netease-music-sdk.xgheaven.com' > docs/CNAME"
   },
   "author": "XGHeaven",
   "repository": {
