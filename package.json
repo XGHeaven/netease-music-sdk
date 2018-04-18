@@ -19,6 +19,7 @@
     "type": "git",
     "url": "git@github.com:XGHeaven/netease-music-sdk.git"
   },
+  "keywords": ["netease", "netease-music", "music", "netease-music-sdk"],
   "license": "MIT",
   "devDependencies": {
     "@types/big-integer": "0.0.31",
