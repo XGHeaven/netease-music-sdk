@@ -1,6 +1,6 @@
 import { createHash } from 'crypto'
 import { BaseClient } from '../client'
-import { BaseRequestData, createWebAPIRequest } from '../lib/request'
+import { BaseRequestData } from '../lib/request'
 
 export interface LoginData extends BaseRequestData {
     // TODO

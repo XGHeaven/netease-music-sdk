@@ -81,18 +81,18 @@ export class SearchExtClient extends BaseClient {
         )
     }
 
-  /**
-   * 获取热搜
-   * @returns {Promise<any>}
-   */
-  async searchHot() {
-      return await this.request(
-        'music.163.com',
-        '/weapi/search/hot',
-        'POST',
-        {
-          type: 1111,
-        },
-      )
+    /**
+     * 获取热搜
+     * @returns {Promise<any>}
+     */
+    async searchHot() {
+        return await this.request(
+            'music.163.com',
+            '/weapi/search/hot',
+            'POST',
+            {
+                type: 1111,
+            },
+        )
     }
 }

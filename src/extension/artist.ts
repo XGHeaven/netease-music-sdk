@@ -19,12 +19,12 @@ import { BaseClient } from '../client'
  * 韩国组合/乐队 7003
  */
 export type ArtistCatalogueCode =
-  '1001' | '1002' | '1003' |
-  '2001' | '2002' | '2003' |
-  '4001' | '4002' | '4003' |
-  '5001' |
-  '6001' | '6002' | '6003' |
-  '7001' | '7002' | '7003'
+    '1001' | '1002' | '1003' |
+    '2001' | '2002' | '2003' |
+    '4001' | '4002' | '4003' |
+    '5001' |
+    '6001' | '6002' | '6003' |
+    '7001' | '7002' | '7003'
 
 export class ArtistExtClient extends BaseClient {
     /**
@@ -44,47 +44,47 @@ export class ArtistExtClient extends BaseClient {
         )
     }
 
-  /**
-   * 收藏/取消收藏歌手
-   * @param {number} id 歌手 ID
-   * @param {"subscribe" | "unsubscribe"} action
-   * @returns {Promise<any>}
-   */
+    /**
+     * 收藏/取消收藏歌手
+     * @param {number} id 歌手 ID
+     * @param {"subscribe" | "unsubscribe"} action
+     * @returns {Promise<any>}
+     */
     async subscribeArtist(id: number, action: 'subscribe' | 'unsubscribe' = 'subscribe') {
-      await this.checkLogin()
-      return await this.request(
-        'music.163.com',
-        `/weapi/artist/${action === 'subscribe' ? 'sub' : 'unsub'}`,
-        'POST',
-        {
-          artistId: `${id}`,
-        },
-      )
+        await this.checkLogin()
+        return await this.request(
+            'music.163.com',
+            `/weapi/artist/${action === 'subscribe' ? 'sub' : 'unsub'}`,
+            'POST',
+            {
+                artistId: `${id}`,
+            },
+        )
     }
 
-  /**
-   * 根据类型获取歌手列表
-   * @param {ArtistCatalogueCode} catalogue 歌手类型
-   * @param {number} limit 返回分页数量限制
-   * @param {number} offset 返回分页偏移
-   * @returns {Promise<any>}
-   */
+    /**
+     * 根据类型获取歌手列表
+     * @param {ArtistCatalogueCode} catalogue 歌手类型
+     * @param {number} limit 返回分页数量限制
+     * @param {number} offset 返回分页偏移
+     * @returns {Promise<any>}
+     */
     async getArtistList(
-      catalogue: ArtistCatalogueCode,
-      limit: number = 50,
-      offset: number = 0,
+        catalogue: ArtistCatalogueCode,
+        limit: number = 50,
+        offset: number = 0,
     ) {
-      return await this.request(
-        'music.163.com',
-        '/weapi/artist/list',
-        'POST',
-        {
-          limit,
-          offset,
-          categoryCode: catalogue,
-          total: 'false', // TODO: api 中没有定义，暂时写死了
-        },
-      )
+        return await this.request(
+            'music.163.com',
+            '/weapi/artist/list',
+            'POST',
+            {
+                limit,
+                offset,
+                categoryCode: catalogue,
+                total: 'false', // TODO: api 中没有定义，暂时写死了
+            },
+        )
     }
 
     /**
