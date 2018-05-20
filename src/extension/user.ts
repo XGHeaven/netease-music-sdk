@@ -9,17 +9,54 @@ export enum UserRecordType {
 }
 
 export enum UserGender {
+    /**
+     * 保密
+     */
     SECRECY = 0,
+
+    /**
+     * 男
+     */
     MALE = 1,
+
+    /**
+     * 女
+     */
     FEMALE = 2,
 }
 
+/**
+ * 更新用户信息参数结构
+ */
 export interface UserUpdate {
+    /**
+     * 用户性别
+     */
     gender: UserGender,
+
+    /**
+     * 用户生日，unix 时间戳
+     */
     birthday: number,
+
+    /**
+     * 用户昵称
+     */
     nickname: string,
+
+    /**
+     * 省份代码
+     */
     province: number,
+
+    /**
+     * 城市代码
+     */
     city: number,
+
+    /**
+     * 用户的个性签名
+     */
     signature: string,
 }
 

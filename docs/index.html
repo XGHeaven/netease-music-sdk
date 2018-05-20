@@ -927,6 +927,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-enum">
 			<a href="enums/topresourcearea.html" class="tsd-kind-icon">Top<wbr>Resource<wbr>Area</a>
 		</li>
+		<li class=" tsd-kind-enum tsd-is-external">
+			<a href="enums/usergender.html" class="tsd-kind-icon">User<wbr>Gender</a>
+		</li>
 		<li class=" tsd-kind-enum">
 			<a href="enums/userrecordtype.html" class="tsd-kind-icon">User<wbr>Record<wbr>Type</a>
 		</li>
@@ -950,6 +953,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-class tsd-is-external">
 			<a href="classes/loginneedederror.html" class="tsd-kind-icon">Login<wbr>Needed<wbr>Error</a>
+		</li>
+		<li class=" tsd-kind-class tsd-is-external">
+			<a href="classes/messageextclient.html" class="tsd-kind-icon">Message<wbr>Ext<wbr>Client</a>
 		</li>
 		<li class=" tsd-kind-class">
 			<a href="classes/musicclient.html" class="tsd-kind-icon">Music<wbr>Client</a>
@@ -1000,7 +1006,13 @@ img { max-width: 100%; }
 			<a href="interfaces/personalsinglefmdata.html" class="tsd-kind-icon">Personal<wbr>SingleFMData</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-is-external">
+			<a href="interfaces/userupdate.html" class="tsd-kind-icon">User<wbr>Update</a>
+		</li>
+		<li class=" tsd-kind-interface tsd-is-external">
 			<a href="interfaces/webapidata.html" class="tsd-kind-icon">WebAPIData</a>
+		</li>
+		<li class=" tsd-kind-type-alias tsd-is-external">
+			<a href="globals.html#artistcataloguecode" class="tsd-kind-icon">Artist<wbr>Catalogue<wbr>Code</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-external">
 			<a href="globals.html#encrypt" class="tsd-kind-icon">Encrypt</a>
@@ -1041,6 +1053,7 @@ img { max-width: 100%; }
 				<li>[x] 最热（已单测）</li>
 				<li>[x] 用户</li>
 				<li>[x] MV（已单测）</li>
+				<li>[x] 私信</li>
 			</ul>
 			<h2 id="-">安装</h2>
 			<pre><code class="lang-bash">npm install netease-music-sdk
@@ -1100,6 +1113,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 							<li class="tsd-kind-enum"><a href="enums/toplisttype.html" class="tsd-kind-icon">Top<wbr>List<wbr>Type</a></li>
 							<li class="tsd-kind-enum"><a href="enums/topplaylistorder.html" class="tsd-kind-icon">Top<wbr>Playlist<wbr>Order</a></li>
 							<li class="tsd-kind-enum"><a href="enums/topresourcearea.html" class="tsd-kind-icon">Top<wbr>Resource<wbr>Area</a></li>
+							<li class="tsd-kind-enum tsd-is-external"><a href="enums/usergender.html" class="tsd-kind-icon">User<wbr>Gender</a></li>
 							<li class="tsd-kind-enum"><a href="enums/userrecordtype.html" class="tsd-kind-icon">User<wbr>Record<wbr>Type</a></li>
 						</ul>
 					</section>
@@ -1113,6 +1127,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/commentextclient.html" class="tsd-kind-icon">Comment<wbr>Ext<wbr>Client</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/loginextclient.html" class="tsd-kind-icon">Login<wbr>Ext<wbr>Client</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/loginneedederror.html" class="tsd-kind-icon">Login<wbr>Needed<wbr>Error</a></li>
+							<li class="tsd-kind-class tsd-is-external"><a href="classes/messageextclient.html" class="tsd-kind-icon">Message<wbr>Ext<wbr>Client</a></li>
 							<li class="tsd-kind-class"><a href="classes/musicclient.html" class="tsd-kind-icon">Music<wbr>Client</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/musicextclient.html" class="tsd-kind-icon">Music<wbr>Ext<wbr>Client</a></li>
 							<li class="tsd-kind-class tsd-is-external"><a href="classes/mvextclient.html" class="tsd-kind-icon">Mv<wbr>Ext<wbr>Client</a></li>
@@ -1134,7 +1149,14 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 							<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/logindata.html" class="tsd-kind-icon">Login<wbr>Data</a></li>
 							<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/personalfmdata.html" class="tsd-kind-icon">PersonalFMData</a></li>
 							<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/personalsinglefmdata.html" class="tsd-kind-icon">Personal<wbr>SingleFMData</a></li>
+							<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/userupdate.html" class="tsd-kind-icon">User<wbr>Update</a></li>
 							<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/webapidata.html" class="tsd-kind-icon">WebAPIData</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-external">
+						<h3>Type aliases</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#artistcataloguecode" class="tsd-kind-icon">Artist<wbr>Catalogue<wbr>Code</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section tsd-is-external">
@@ -1145,6 +1167,42 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 							<li class="tsd-kind-function tsd-is-external"><a href="globals.html#createwebapirequest" class="tsd-kind-icon">create<wbr>WebAPIRequest</a></li>
 						</ul>
 					</section>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<h2>Type aliases</h2>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+				<a name="artistcataloguecode" class="tsd-anchor"></a>
+				<h3>Artist<wbr>Catalogue<wbr>Code</h3>
+				<div class="tsd-signature tsd-kind-icon">Artist<wbr>Catalogue<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"1001"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"1002"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"1003"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"2001"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"2002"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"2003"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4001"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4002"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4003"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"5001"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"6001"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"6002"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"6003"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"7001"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"7002"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"7003"</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L23">extension/artist.ts:23</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>歌手分类代码</p>
+					</div>
+					<ul>
+						<li>华语男歌手 1001</li>
+						<li>华语女歌手 1002</li>
+						<li>华语组合/乐队 1003</li>
+						<li>欧美男歌手 2001</li>
+						<li>欧美女歌手 2002</li>
+						<li>欧美组合/乐队 2003</li>
+						<li>其他男歌手 4001</li>
+						<li>其他女歌手 4002</li>
+						<li>其他组合/乐队 4003</li>
+						<li>入驻歌手 5001</li>
+						<li>日本男歌手 6001</li>
+						<li>日本女歌手 6002</li>
+						<li>日本组合/乐队 6003</li>
+						<li>韩国男歌手 7001</li>
+						<li>韩国女歌手 7002</li>
+						<li>韩国组合/乐队 7003</li>
+					</ul>
 				</div>
 			</section>
 		</section>
@@ -1160,7 +1218,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/lib/crypto.ts#L65">lib/crypto.ts:65</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/lib/crypto.ts#L65">lib/crypto.ts:65</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1185,7 +1243,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/lib/request.ts#L84">lib/request.ts:84</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/lib/request.ts#L84">lib/request.ts:84</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1214,7 +1272,7 @@ client.phoneLogin(<span class="hljs-string">'phone'</span>, <span class="hljs-st
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/lib/request.ts#L43">lib/request.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/lib/request.ts#L43">lib/request.ts:43</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
