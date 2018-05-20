@@ -53,3 +53,8 @@ it('multiSearch', async () => {
     const data = await music.multiSearch('gaobai')
     expect(data).toHaveProperty('result.orders')
 })
+
+it('searchTop', async () => {
+    const data = await music.searchHot()
+    expect(data).toHaveProperty('result.hots')
+})
