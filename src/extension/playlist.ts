@@ -27,6 +27,43 @@ export class PlaylistExtClient extends BaseClient {
         )
     }
 
+  /**
+   * 新建歌单
+   * @param {string} name 歌单名
+   * @returns {Promise<any>}
+   */
+    async createPlaylist(name: string) {
+        await this.checkLogin()
+        return await this.request(
+            'music.163.com',
+            '/weapi/playlist/create',
+            'POST',
+            {
+                name,
+                csrf_token: '',
+            },
+        )
+    }
+
+  /**
+   * 收藏/取消收藏歌单
+   * @param {number} playlistId 表单 ID
+   * @param {"subscribe" | "unsubscribe"} action 收藏或者取消收藏
+   * @returns {Promise<any>}
+   */
+    async subscribePlyalist(playlistId: number, action: 'subscribe' | 'unsubscribe' = 'subscribe') {
+      await this.checkLogin()
+      return await this.request(
+        'music.163.com',
+        `/weapi/playlist/${action}`,
+        'POST',
+        {
+          csrf_token: '',
+          id: playlistId,
+        },
+      )
+    }
+
     /**
      * 对歌单添加或者删除歌曲
      * @param {number} pid 歌单 ID
