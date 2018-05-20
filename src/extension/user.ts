@@ -8,7 +8,41 @@ export enum UserRecordType {
     ALL = 0,
 }
 
+export enum UserGender {
+  SECRECY = 0,
+  MALE = 1,
+  FEMALE = 2,
+}
+
+export interface UserUpdate {
+  gender: UserGender,
+  birthday: number,
+  nickname: string,
+  province: number,
+  city: number,
+  signature: string,
+}
+
 export class UserExtClient extends BaseClient {
+  /**
+   * 更新用户信息
+   * @param {UserUpdate} user
+   * @returns {Promise<void>}
+   */
+  async updateUser(user: UserUpdate) {
+    await this.checkLogin()
+    await this.request(
+      'music.163.com',
+      '/weapi/user/profile/update',
+      'POST',
+      {
+        avatarImgId: '',
+        csrf_token: '',
+        ...user,
+      },
+    )
+  }
+
     /**
      * 获取用户信息
      * @param {number} uid

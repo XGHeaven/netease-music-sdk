@@ -86,10 +86,14 @@ export {
 
 import {
     UserExtClient,
-    UserRecordType,
+    UserGender,
+  UserRecordType,
+  UserUpdate,
 } from './extension/user'
 export {
     UserRecordType,
+  UserUpdate,
+  UserGender,
 }
 
 import { MvExtClient } from './extension/mv'

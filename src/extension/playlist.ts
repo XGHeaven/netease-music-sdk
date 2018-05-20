@@ -28,6 +28,29 @@ export class PlaylistExtClient extends BaseClient {
     }
 
   /**
+   * 更新歌单
+   * @param {number} id 歌单 ID
+   * @param {string} name 歌单名字
+   * @param {string} desc 歌单描述
+   * @param {string} tags 歌单标签
+   * @returns {Promise<any>}
+   */
+    async updatePlaylist(id: number, name: string, desc: string, tags: string) {
+      await this.checkLogin()
+      return await this.request(
+        'music.163.com',
+        '/weapi/batch',
+        'POST',
+        {
+          '/api/playlist/desc/update': `{"id": ${id}, "desc":"${desc}"}`,
+          '/api/playlist/tags/update': `{"id": ${id}, "tags":"${tags}"}`,
+          '/api/playlist/update/name': `{"id": ${id}, "name":"${name}"}`,
+          'csrf_token': '',
+        },
+      )
+    }
+
+  /**
    * 新建歌单
    * @param {string} name 歌单名
    * @returns {Promise<any>}
