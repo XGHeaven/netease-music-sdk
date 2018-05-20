@@ -57,7 +57,7 @@ export class MusicExtClient extends BaseClient {
             '/weapi/v3/song/detail',
             'POST',
             {
-                c: JSON.stringify([{ id }]),
+                c: JSON.stringify([{id}]),
                 csrf_token: '',
                 ids: '[' + id + ']',
             },

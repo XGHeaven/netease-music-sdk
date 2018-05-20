@@ -86,24 +86,30 @@ export {
 
 import {
     UserExtClient,
+    UserGender,
     UserRecordType,
+    UserUpdate,
 } from './extension/user'
 export {
     UserRecordType,
+    UserUpdate,
+    UserGender,
 }
+
 import { MvExtClient } from './extension/mv'
+
+import { MessageExtClient } from './extension/message'
 
 // https://www.typescriptlang.org/docs/handbook/declaration-merging.html
 function applyMixins(derivedCtor: any, baseCtors: any[]) {
     baseCtors.forEach((baseCtor) => {
         Object.getOwnPropertyNames(baseCtor.prototype).forEach((name) => {
-            derivedCtor.prototype[name] = baseCtor.prototype[name];
-        });
-    });
+            derivedCtor.prototype[name] = baseCtor.prototype[name]
+        })
+    })
 }
 
-export interface MusicClient extends
-    AlibumExtClient,
+export interface MusicClient extends AlibumExtClient,
     ArtistExtClient,
     BannerExtClient,
     CommentExtClient,
@@ -117,11 +123,13 @@ export interface MusicClient extends
     SimiExtClient,
     TopExtClient,
     UserExtClient,
-    MvExtClient {
+    MvExtClient,
+    MessageExtClient {
     // EMPTY
 }
 
-export class MusicClient extends BaseClient {}
+export class MusicClient extends BaseClient {
+}
 
 applyMixins(MusicClient, [
     AlibumExtClient,
@@ -139,4 +147,5 @@ applyMixins(MusicClient, [
     TopExtClient,
     UserExtClient,
     MvExtClient,
+    MessageExtClient,
 ])

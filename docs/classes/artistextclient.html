@@ -927,6 +927,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-enum">
 			<a href="../enums/topresourcearea.html" class="tsd-kind-icon">Top<wbr>Resource<wbr>Area</a>
 		</li>
+		<li class=" tsd-kind-enum tsd-is-external">
+			<a href="../enums/usergender.html" class="tsd-kind-icon">User<wbr>Gender</a>
+		</li>
 		<li class=" tsd-kind-enum">
 			<a href="../enums/userrecordtype.html" class="tsd-kind-icon">User<wbr>Record<wbr>Type</a>
 		</li>
@@ -958,6 +961,9 @@ img { max-width: 100%; }
 					<a href="artistextclient.html#getartistinfo" class="tsd-kind-icon">get<wbr>Artist<wbr>Info</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a href="artistextclient.html#getartistlist" class="tsd-kind-icon">get<wbr>Artist<wbr>List</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a href="artistextclient.html#getartistmvs" class="tsd-kind-icon">get<wbr>Artist<wbr>Mvs</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -971,6 +977,9 @@ img { max-width: 100%; }
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
 					<a href="artistextclient.html#requestwithsetcookie" class="tsd-kind-icon">request<wbr>With<wbr>Set<wbr>Cookie</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a href="artistextclient.html#subscribeartist" class="tsd-kind-icon">subscribe<wbr>Artist</a>
 				</li>
 			</ul>
 		</li>
@@ -988,6 +997,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-class tsd-is-external">
 			<a href="loginneedederror.html" class="tsd-kind-icon">Login<wbr>Needed<wbr>Error</a>
+		</li>
+		<li class=" tsd-kind-class tsd-is-external">
+			<a href="messageextclient.html" class="tsd-kind-icon">Message<wbr>Ext<wbr>Client</a>
 		</li>
 		<li class=" tsd-kind-class">
 			<a href="musicclient.html" class="tsd-kind-icon">Music<wbr>Client</a>
@@ -1038,7 +1050,13 @@ img { max-width: 100%; }
 			<a href="../interfaces/personalsinglefmdata.html" class="tsd-kind-icon">Personal<wbr>SingleFMData</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-is-external">
+			<a href="../interfaces/userupdate.html" class="tsd-kind-icon">User<wbr>Update</a>
+		</li>
+		<li class=" tsd-kind-interface tsd-is-external">
 			<a href="../interfaces/webapidata.html" class="tsd-kind-icon">WebAPIData</a>
+		</li>
+		<li class=" tsd-kind-type-alias tsd-is-external">
+			<a href="../globals.html#artistcataloguecode" class="tsd-kind-icon">Artist<wbr>Catalogue<wbr>Code</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-external">
 			<a href="../globals.html#encrypt" class="tsd-kind-icon">Encrypt</a>
@@ -1095,11 +1113,13 @@ img { max-width: 100%; }
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#getartistalbums" class="tsd-kind-icon">get<wbr>Artist<wbr>Albums</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#getartisthotsongs" class="tsd-kind-icon">get<wbr>Artist<wbr>Hot<wbr>Songs</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#getartistinfo" class="tsd-kind-icon">get<wbr>Artist<wbr>Info</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#getartistlist" class="tsd-kind-icon">get<wbr>Artist<wbr>List</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#getartistmvs" class="tsd-kind-icon">get<wbr>Artist<wbr>Mvs</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#getartistsongs" class="tsd-kind-icon">get<wbr>Artist<wbr>Songs</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="artistextclient.html#load" class="tsd-kind-icon">load</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="artistextclient.html#request" class="tsd-kind-icon">request</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="artistextclient.html#requestwithsetcookie" class="tsd-kind-icon">request<wbr>With<wbr>Set<wbr>Cookie</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="artistextclient.html#subscribeartist" class="tsd-kind-icon">subscribe<wbr>Artist</a></li>
 						</ul>
 					</section>
 				</div>
@@ -1114,7 +1134,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#user">user</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L10">client.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L10">client.ts:10</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1134,7 +1154,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#cookie">cookie</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L12">client.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L12">client.ts:12</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1145,7 +1165,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#islogin">isLogin</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L16">client.ts:16</a></li>
+						<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L16">client.ts:16</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1163,7 +1183,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#checklogin">checkLogin</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L28">client.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L28">client.ts:28</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1180,7 +1200,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/extension/artist.ts#L67">extension/artist.ts:67</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L138">extension/artist.ts:138</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1214,7 +1234,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/extension/artist.ts#L26">extension/artist.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L97">extension/artist.ts:97</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1242,7 +1262,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/extension/artist.ts#L86">extension/artist.ts:86</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L157">extension/artist.ts:157</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1261,6 +1281,49 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<a name="getartistlist" class="tsd-anchor"></a>
+				<h3>get<wbr>Artist<wbr>List</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Artist<wbr>List<span class="tsd-signature-symbol">(</span>catalogue<span class="tsd-signature-symbol">: </span><a href="../globals.html#artistcataloguecode" class="tsd-signature-type">ArtistCatalogueCode</a>, limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L74">extension/artist.ts:74</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>根据类型获取歌手列表</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>catalogue: <a href="../globals.html#artistcataloguecode" class="tsd-signature-type">ArtistCatalogueCode</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>歌手类型</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> limit: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;50</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>返回分页数量限制</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> offset: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>返回分页偏移</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 				<a name="getartistmvs" class="tsd-anchor"></a>
 				<h3>get<wbr>Artist<wbr>Mvs</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -1270,7 +1333,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/extension/artist.ts#L45">extension/artist.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L116">extension/artist.ts:116</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1306,7 +1369,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/extension/artist.ts#L13">extension/artist.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L41">extension/artist.ts:41</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1342,7 +1405,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#load">load</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L24">client.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L24">client.ts:24</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1374,7 +1437,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#request">request</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L34">client.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L34">client.ts:34</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1407,7 +1470,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="baseclient.html">BaseClient</a>.<a href="baseclient.html#requestwithsetcookie">requestWithSetCookie</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/1909e3e/src/client.ts#L40">client.ts:40</a></li>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/client.ts#L40">client.ts:40</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1423,6 +1486,40 @@ img { max-width: 100%; }
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> payload: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;{csrf_token: &#x27;&#x27;,}</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<a name="subscribeartist" class="tsd-anchor"></a>
+				<h3>subscribe<wbr>Artist</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<li class="tsd-signature tsd-kind-icon">subscribe<wbr>Artist<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, action<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"subscribe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"unsubscribe"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/XGHeaven/netease-music-sdk/blob/6fb948f/src/extension/artist.ts#L55">extension/artist.ts:55</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>收藏/取消收藏歌手</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>id: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>歌手 ID</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> action: <span class="tsd-signature-type">"subscribe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"unsubscribe"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;subscribe&quot;</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>

@@ -1,6 +1,6 @@
 {
   "name": "netease-music-sdk",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "NetEast Music SDK, Simple & Quickly & Powerful",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -19,6 +19,12 @@
     "type": "git",
     "url": "git@github.com:XGHeaven/netease-music-sdk.git"
   },
+  "keywords": [
+    "netease",
+    "netease-music",
+    "music",
+    "netease-music-sdk"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/big-integer": "0.0.31",
@@ -56,7 +62,9 @@
     ],
     "testEnvironment": "node",
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/**/*.{ts,js}"],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,js}"
+    ],
     "coverageDirectory": "coverage",
     "mapCoverage": true
   }
