@@ -18,6 +18,24 @@ export class ArtistExtClient extends BaseClient {
         )
     }
 
+  /**
+   * 收藏/取消收藏歌手
+   * @param {number} id 歌手 ID
+   * @param {"subscribe" | "unsubscribe"} action
+   * @returns {Promise<any>}
+   */
+    async subscribeArtist(id: number, action: 'subscribe' | 'unsubscribe' = 'subscribe') {
+      await this.checkLogin()
+      return await this.request(
+        'music.163.com',
+        `/weapi/artist/${action === 'subscribe' ? 'sub' : 'unsub'}`,
+        'POST',
+        {
+          artistId: `${id}`,
+        },
+      )
+    }
+
     /**
      * 获取歌手的最热 50 首歌曲
      * @param {number} id
