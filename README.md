@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/netease-music-sdk.svg?style=flat-square)](https://github.com/XGHeaven/netease-music-sdk)
 [![npm](https://img.shields.io/npm/dw/netease-music-sdk.svg?style=flat-square)](https://www.npmjs.com/package/netease-music-sdk)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FXGHeaven%2Fnetease-music-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FXGHeaven%2Fnetease-music-sdk?ref=badge_shield)
 
 网易云音乐 Node.js 版本 SDK，反正估计只有国内会用，我也就懒得用英文了。
 
@@ -86,3 +87,6 @@ SDK 接口文档： [http://netease-music-sdk.xgheaven.com](http://netease-music
 ## Thanks
 
 欢迎提交 issue 已经 PR
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FXGHeaven%2Fnetease-music-sdk.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FXGHeaven%2Fnetease-music-sdk?ref=badge_large)
