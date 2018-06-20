@@ -28,7 +28,7 @@ it('getSimiPlaylist', async () => {
 })
 
 it('getSimiMv', async () => {
-    const data = await noLoginClient.getSimiMv(5382080) // 告白气球 mv
+    const data = await noLoginClient.getSimiMv(5843433) // 厉害了我的国，成龙
     expect(data).toHaveProperty('mvs')
     expect(data.mvs).toHaveLength(5)
 })

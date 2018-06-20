@@ -23,10 +23,7 @@ export async function getLoginedClient(): Promise<MusicClient> {
     }
     await client.phoneLogin(config.account.phone.user, config.account.phone.pwd)
     config.store = client.user.toJSON()
+    fs.writeJSONSync(configPath, config)
 
     return client
 }
-
-process.on('exit', () => {
-    fs.writeJSONSync(configPath, config)
-})

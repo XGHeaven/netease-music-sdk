@@ -47,6 +47,7 @@ export async function createWebAPIRequest(
     data: any,
     cookie: string[] = [],
 ) {
+    data.csrf_token = (cookie.find(str => !!str.match(/_csrf=[^(;|$)]+;/g)) || '').slice(6)
     const cryptoreq = Encrypt(data)
     const options: Axios.AxiosRequestConfig = {
         method,
