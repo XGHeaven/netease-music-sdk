@@ -38,19 +38,19 @@ describe('search', () => {
 
     it('offset', async () => {
         const list1 = await music.search('Own it', SearchType.SONG, 10, 0)
-        const list2 = await music.search('Own it', SearchType.SONG, 10, 9)
+        const list2 = await music.search('Own it', SearchType.SONG, 10, 10)
         expect(list1.result.songs[9]).toEqual(list2.result.songs[0])
     })
 })
 
 it('searchSuggest', async () => {
-    const data = await music.searchSuggest('gaobai')
+    const data = await music.searchSuggest('厉害了')
     expect(data).toHaveProperty('result.order')
 })
 
-it('multiSearch', async () => {
+it.skip('multiSearch', async () => {
     // Q: 实在是不知道这个是干啥的，就先这样留着吧
-    const data = await music.multiSearch('gaobai')
+    const data = await music.multiSearch('lihaile')
     expect(data).toHaveProperty('result.orders')
 })
 
