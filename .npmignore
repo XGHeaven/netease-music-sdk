@@ -2,5 +2,8 @@ node_modules
 test
 ret
 src
+docs
+coverage
+.idea
 
 *.log
